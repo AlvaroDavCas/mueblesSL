@@ -1,6 +1,10 @@
 package dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
+    private int id;
     private String nombre;
     private String apellidos;
     private String nif;
@@ -9,6 +13,21 @@ public class Cliente {
     private String provincia;
     private String telefono;
     private String email;
+    private List<Factura> facturas;
+
+    public Cliente(int id, String telefono, String nif, String nombre, String apellidos,
+                   String direccion, String localidad, String provincia, String email) {
+        this.id = id;
+        this.telefono = telefono;
+        this.nif = nif;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.localidad = localidad;
+        this.provincia = provincia;
+        this.email = email;
+        this.facturas = new ArrayList<Factura>();
+    }
 
     public String getNombre() {
         return nombre;
@@ -72,5 +91,25 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Factura> getFacturas() {
+        return facturas;
+    }
+
+    public void setFacturas(List<Factura> facturas) {
+        this.facturas = facturas;
+    }
+
+    public void addFactura(Factura f) {
+        this.facturas.add(f);
     }
 }
