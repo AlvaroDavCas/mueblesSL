@@ -5,13 +5,13 @@ public class Factura {
     private int idCliente;
     private int numFactura;
     private String concepto;
-    private String precio;
+    private int precio;
     private String fecha;
     private String hora;
     private double importe;
 
     public Factura(int id, int idCliente, int numFactura, String concepto,
-                   String precio, String fecha, String hora, double importe) {
+                   int precio, String fecha, String hora, double importe) {
         this.id = id;
         this.idCliente = idCliente;
         this.numFactura = numFactura;
@@ -36,14 +36,6 @@ public class Factura {
 
     public void setConcepto(String concepto) {
         this.concepto = concepto;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
     }
 
     public String getFecha() {
@@ -84,5 +76,13 @@ public class Factura {
 
     public void setImporte(double importe) {
         this.importe = importe;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 }

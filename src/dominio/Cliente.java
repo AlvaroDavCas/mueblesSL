@@ -108,4 +108,8 @@ public class Cliente {
     public void setFacturas(List<Factura> facturas) {
         this.facturas = facturas;
     }
+
+    public void addFactura(Factura f) {
+        this.facturas.add(f);
+    }
 }
