@@ -19,7 +19,7 @@ public class ClientService {
     }
 
     public List<Client> obtenerTodosLosClientes() {
-        return new ArrayList<>();
+        return repository.getAllClients();
     }
 
     public void crearCliente(Client client) {

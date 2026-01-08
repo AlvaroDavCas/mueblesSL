@@ -1,5 +1,7 @@
 import features.Client;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import services.ClientService;
 
@@ -69,6 +71,11 @@ public class Main {
 
     private static void listarClientes(ClientService clientService) {
 
+        List<Client> clients = clientService.obtenerTodosLosClientes();
+
+        for (int i = 0; i < clients.size(); i++){
+            System.out.println(clients.get(i));
+        }
     }
 
     private static void altaCliente(ClientService clientService) {
