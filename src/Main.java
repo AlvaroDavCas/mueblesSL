@@ -3,6 +3,7 @@ import features.Client;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import services.ClientService;
 
 public class Main {
@@ -70,19 +71,32 @@ public class Main {
     }
 
     private static void listarClientes(ClientService clientService) {
-
         List<Client> clients = clientService.obtenerTodosLosClientes();
-
-        for (int i = 0; i < clients.size(); i++){
+        for (int i = 0; i < clients.size(); i++) {
             System.out.println(clients.get(i));
         }
     }
 
     private static void altaCliente(ClientService clientService) {
-
+        String nombre = leerTextoObligatorio("Nombre: ");
+        String apellidos = leerTextoObligatorio("Apellidos: ");
+        String nif = leerTextoObligatorio("NIF: ");
+        String direccion = leerTexto("Dirección: ");
+        String localidad = leerTexto("Localidad: ");
+        String provincia = leerTexto("Provincia: ");
+        String telefono = leerTexto("Teléfono: ");
+        String email = leerTexto("Email: ");
+        Client client = new Client(
+                nombre, apellidos, nif,
+                direccion, localidad, provincia,
+                telefono, email
+        );
+        clientService.crearCliente(client);
+        System.out.println("El cliente a sido dado de alta. ");
     }
 
     private static void modificarCliente(ClientService clientService) {
+        buscarCliente(clientService);
 
     }
 
