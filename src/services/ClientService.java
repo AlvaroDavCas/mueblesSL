@@ -31,6 +31,6 @@ public class ClientService {
     }
 
     public void modificarCliente(Client client) {
-        // To be implemented
+        repository.updateClient(client);
     }
 }
